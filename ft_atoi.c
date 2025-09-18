@@ -10,30 +10,35 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_atoi(const char *str)
+static int  ft_isspace(int c)
 {
-	int	i;
-	int	nb;
-	int	sign;
+    if (c == ' ' || (c > 8 && c < 14))
+        return (1);
+    return (0);
+}
 
-	i = 0;
-	nb = 0;
-	sign = 1;
-	while (ft_isspace(str[i]) && str[i] != '\0')
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb *= 10;
-		nb += str[i] - '0';
-		i++;
-	}
-	return (sign * nb);
+int ft_atoi(const char *str)
+{
+    int i;
+    int nb;
+    int sign;
+
+    i = 0;
+    nb = 0;
+    sign = 1;
+    while (ft_isspace(str[i]) && str[i] != '\0')
+        i++;
+    if (str[i] == '+' || str[i] == '-')
+    {
+        if (str[i] == '-')
+            sign *= -1;
+        i++;
+    }
+    while (str[i] >= '0' && str[i] <= '9')
+    {
+        nb *= 10;
+        nb += str[i] - '0';
+        i++;
+    }
+    return (sign * nb);
 }

@@ -10,17 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-char	*ft_strchr(const char *s, int c)
+char    *ft_strchr(const char *s, int c)
 {
-	while (*s != '\0')
-	{
-		if (*(unsigned char *) s == (unsigned char) c)
-			break ;
-		s++;
-	}
-	if (*(unsigned char *) s != (unsigned char) c)
-		return (NULL);
-	return ((char *) s);
+    while (*s != '\0')
+    {
+        if (*(unsigned char *) s == (unsigned char) c)
+            break ;
+        s++;
+    }
+    if (*(unsigned char *) s != (unsigned char) c)
+        return (NULL);
+    return ((char *) s);
 }

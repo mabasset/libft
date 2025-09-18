@@ -10,23 +10,42 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+static char *ft_strdup(const char *s1)
 {
-	char			*str;
-	unsigned int	i;
+    char    *ptr;
+    int     i;
 
-	if (s == NULL || f == NULL)
-		return (NULL);
-	str = ft_strdup(s);
-	if (str == NULL)
-		return (NULL);
-	i = 0;
-	while (str[i] != '\0')
-	{
-		str[i] = (*f)(i, str[i]);
-		i++;
-	}
-	return (str);
+    i = 0;
+    while (s1[i] != '\0')
+        i++;
+    ptr = (char *) malloc (sizeof(char) * i + 1);
+    i = 0;
+    while (s1[i] != 0)
+    {
+        ptr[i] = s1[i];
+        i++;
+    }
+    ptr[i] = '\0';
+    return (ptr);
+}
+
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+    char            *str;
+    unsigned int    i;
+
+    if (s == NULL || f == NULL)
+        return (NULL);
+    str = ft_strdup(s);
+    if (str == NULL)
+        return (NULL);
+    i = 0;
+    while (str[i] != '\0')
+    {
+        str[i] = (*f)(i, str[i]);
+        i++;
+    }
+    return (str);
 }

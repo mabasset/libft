@@ -10,11 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isspace(int c)
+int ft_isspace(int c)
 {
-	if (c == ' ' || (c > 8 && c < 14))
-		return (1);
-	return (0);
+    if (c == ' ' || (c > 8 && c < 14))
+        return (1);
+    return (0);
 }

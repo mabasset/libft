@@ -10,17 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-void	ft_free_matrix(void	**matrix)
+void    ft_free_matrix(void **matrix)
 {
-	int	i;
+    int i;
 
-	i = 0;
-	while (matrix[i] != NULL)
-	{
-		free(matrix[i]);
-		i++;
-	}
-	free(matrix);
+    i = 0;
+    while (matrix[i] != NULL)
+    {
+        free(matrix[i]);
+        i++;
+    }
+    free(matrix);
 }
