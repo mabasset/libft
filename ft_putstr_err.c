@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabasset <mabasset@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 19:14:32 by mabasset          #+#    #+#             */
-/*   Updated: 2022/01/14 12:11:06 by mabasset         ###   ########.fr       */
+/*   Created: 2022/01/14 12:02:08 by mabasset          #+#    #+#             */
+/*   Updated: 2022/01/14 12:14:27 by mabasset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_putchar_fd(char c, int fd)
+void    ft_putstr_err(char *s)
 {
-    write(fd, &c, 1);
+    while (*s != '\0')
+        write(2, s++, 1);
 }
