@@ -1,8 +1,8 @@
-NAME := libft.a
-CFLAGS := -Wall -Wextra -Werror
-SRCS := $(wildcard *.c)
-OBJS := $(SRCS:.c=.o)
-HEADER := libft.h
+NAME = libft.a
+CFLAGS = -Wall -Wextra -Werror
+SRCS = $(wildcard *.c)
+OBJS = $(SRCS:.c=.o)
+HEADER = libft.h
 
 all: $(NAME)
 
